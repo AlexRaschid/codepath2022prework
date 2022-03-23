@@ -11,7 +11,7 @@ const App = () => {
             <div>
                 <h1>Light and Sound Memory game</h1>
                 <p>repeat the pattern back to win the game!</p>
-                <button id="startBtn" 
+                <button id="gameStateBtn" 
                         onClick={() => {setGameState(!gameState)}}>
                         {gameState ? "Stop" : "Start"}
                 </button>

@@ -1,0 +1,16 @@
+#gameStateBtn{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.gameButton {
+    padding: 100px;
+    border-radius: 10px;
+    width: 100%
+}
+
+.buttonCol {
+    width:200px;
+    height:200px;
+    margin:2px;
+}
