@@ -5,7 +5,11 @@ const App = () => {
     
     const [gameState, setGameState] = useState(false)
     const [pattern, setPattern] = useState([2, 2, 4, 3, 2, 1, 2, 4]);
-    const progress = useRef(0);
+    const [start, setStart] = useState(-1); //-1 off 0 on
+    const [progress, setProgress] = useState(1);
+    const [playerInput, setPlayerInput] = useState(null); 
+    const [progressPattern, setProgressPattern] = useState(null);
+    const [index, setIndex] = useState(0);
     const [sounds, setSounds] = useState([
                                          new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart1.mp3?alt=media&token=851a7e22-8008-4e11-b99c-38863b43a79c"),
                                          new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart2.mp3?alt=media&token=96b3b758-45ba-4620-9deb-0e68271d6bd2"),
@@ -14,12 +18,21 @@ const App = () => {
                                         ]);
 
     useEffect(() => {
-        if(gameState){
-            lightButton(pattern[progress.current] );
-            playSound(pattern[progress.current]);
+        if(gameState && playerInput == null){
+            progressPattern.map((btn)=> {
+                playSound(btn);
+                lightButton(btn);
+                setTimeout(() => {clearButton(btn)}, 1175);
+            })
+
+        } else if(gameState && playerInput){
             
+            if(playerInput == progressPattern[index]){
+                console.log("found me!");
+            }
+
         }
-    }, [gameState, progress]);
+    }, [start, progress, playerInput]);
 
     let playSound = (id) => {
         sounds[id].play();
@@ -40,11 +53,11 @@ const App = () => {
                 <h1>Light and Sound Memory game</h1>
                 <p>repeat the pattern back to win the game!</p>
                 <button id="gameStateBtn" 
-                        onClick={() => {setGameState(!gameState)}}>
+                        onClick={() => {setGameState(!gameState); setStart(0); setProgressPattern(pattern.slice(0, progress)); }}>
                         {gameState ? "Stop" : "Start"}
                 </button>
             </div>
-            <Game gameState={gameState} sounds={sounds} playSound={playSound}/>
+            <Game gameState={gameState} sounds={sounds} playSound={playSound} setPlayerInput={setPlayerInput}/>
         </div>
     );
 }
