@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Game from "./components/Game";
 
 let randomPattern = () => {
-    return Array.from({length: 5}, () => Math.floor(Math.random() * 4) + 1);
+    return Array.from({length: 8}, () => Math.floor(Math.random() * 4) + 1);
 }
 
 const App = () => {
