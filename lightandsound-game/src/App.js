@@ -10,7 +10,7 @@ const App = () => {
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart4.mp3?alt=media&token=544dca10-0686-43a4-9c8a-45dee31ab22f")
        ]);
     const gameState = useRef(-1)
-    const [pattern, setPattern] = useState([2, 2, 4, 3, 2, 1, 2, 4]);
+    const [pattern, setPattern] = useState([2, 2, 4]); //[2, 2, 4, 3, 2, 1, 2, 4]
     //const [progress, setProgress] = useState(1); //increases to eventually match pattern.length == you win
     
 
@@ -26,6 +26,11 @@ const App = () => {
 
 
     useEffect(async () => {
+        if(progress.current > pattern.length){
+            console.log('you win');
+            window.alert("Winner - play again? (Page Reloading)");
+            window.location.reload(true)
+        }
         //console.log(playerTurn, start);
         if(playerTurn && start &&
             isNaN(playerInput)){
@@ -33,8 +38,10 @@ const App = () => {
             for(let i = 0; i < progressPattern.length; i++){
                     let btn = progressPattern[i];
                     
+                    
 
-                    await sleep(500);
+                    await sleep(800);
+                    playSound(btn -1 );
                     lightButton(btn);
 
                     await sleep(1000);
@@ -46,20 +53,13 @@ const App = () => {
 
         }
 
-        if(start == false && gameState.current == false && !playerTurn){
-            
-            console.log("cancel execution");
-            
-
-        }
         
+
         //
         if(start && playerInput && playerInput != progressPattern[index.current]){
             console.log('game over');
             window.alert("Game Over - Try Again (Page Reloading)");
             window.location.reload(true)
-            
-
         }
 
         if(playerInput == progressPattern[index.current]){
@@ -89,6 +89,7 @@ const App = () => {
 
 
     let playSound = (id) => {
+        // minus one since the array indexing
         sounds[id].play();
     };    
 
@@ -104,7 +105,7 @@ const App = () => {
     return (
         <div>
             <div>
-                <h1>Light and Sound Memory game</h1>
+                <h1>Light and Fart Memory game</h1>
                 <p>repeat the pattern back to win the game!</p>
                 <button id="gameStateBtn" 
                         onClick={() => { //onstart we set the game conditions
