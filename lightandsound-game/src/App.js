@@ -28,20 +28,34 @@ const App = () => {
             console.log("progressPattern: ", progressPattern);
             for(let i = 0; i < progressPattern.length; i++){
                     let btn = progressPattern[i];
-                    console.log(btn);
+                    
 
-                    await sleep(200);
+                    await sleep(500);
                     lightButton(btn);
 
-                    await sleep(1600);
+                    await sleep(1000);
                     clearButton(btn);
-                    
-                
+                     
             }
 
             setPlayerTurn(false);
         }
+
+        if(start == false && gameState == false && !playerTurn){
+            if(gameState == false){
+                console.log("cancel execution");
+            }
+
+        }
         
+        if(playerInput != false && playerInput != progressPattern[index.current]){
+            console.log('game over');
+            window.alert("Game Over - Try Again (Page Reloading)");
+            window.location.reload(true)
+            
+
+        }
+
         if(playerInput == progressPattern[index.current]){
             index.current = index.current + 1;
             console.log(index);
@@ -56,6 +70,8 @@ const App = () => {
             setPlayerTurn(true);
 
         }
+
+        
         
     }, [start, playerTurn, playerInput]);
 
