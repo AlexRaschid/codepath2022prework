@@ -21,7 +21,7 @@ const App = () => {
     const [start, setStart] = useState(false);
     //const started = useRef(-1);
     const index = useRef(-1);
-    const disable = useRef(true);
+    const disable = useRef(false);
 
 
 
@@ -54,7 +54,7 @@ const App = () => {
         }
         
         //
-        if(playerInput && playerInput != progressPattern[index.current]){
+        if(start && playerInput && playerInput != progressPattern[index.current]){
             console.log('game over');
             window.alert("Game Over - Try Again (Page Reloading)");
             window.location.reload(true)
@@ -130,7 +130,7 @@ const App = () => {
                             
                         }}>
                             {console.log(gameState, index, progress, playerTurn, start)}
-                        {gameState.current === -1 ? "-Start" : gameState.current ? "Stop" : 'Start'}
+                        {gameState.current === -1 ? "Start" : gameState.current ? "Stop" : 'Start'}
                 </button>
             </div>
             <Game gameState={gameState} sounds={sounds} playSound={playSound} setPlayerInput={setPlayerInput} disable={disable} />
