@@ -23,11 +23,10 @@ const App = () => {
 
 
 
-    useEffect(() => {
+    useEffect(async () => {
         if(playerTurn && start){
             console.log("progressPattern: ", progressPattern);
             for(let i = 0; i < progressPattern.length; i++){
-                setTimeout(async () => {
                     let btn = progressPattern[i];
                     console.log(btn);
 
@@ -37,7 +36,7 @@ const App = () => {
                     await sleep(1600);
                     clearButton(btn);
                     
-                }, 1000);
+                
             }
 
             setPlayerTurn(false);
@@ -87,6 +86,7 @@ const App = () => {
                 <button id="gameStateBtn" 
                         onClick={() => { //onstart we set the game conditions
                             setGameState(!gameState); 
+                            setPlayerInput(false);
                             start ? setStart(false): setStart(true);
                             //setProgressPattern();
                             
