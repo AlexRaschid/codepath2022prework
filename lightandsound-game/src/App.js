@@ -9,23 +9,25 @@ const App = () => {
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart3.mp3?alt=media&token=67cb6320-3a90-4c84-850b-da92af235ef6"),
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart4.mp3?alt=media&token=544dca10-0686-43a4-9c8a-45dee31ab22f")
        ]);
-    const [gameState, setGameState] = useState(false)
+    const gameState = useRef(-1)
     const [pattern, setPattern] = useState([2, 2, 4, 3, 2, 1, 2, 4]);
     //const [progress, setProgress] = useState(1); //increases to eventually match pattern.length == you win
     
 
     const [playerInput, setPlayerInput] = useState(false); 
-    const [playerTurn, setPlayerTurn] = useState(true);//default true bc user needs to click to start
+    const [playerTurn, setPlayerTurn] = useState(-1);//default true bc user needs to click to start
     const progress = useRef(0);
     const [progressPattern, setProgressPattern] = useState([...pattern].slice(0, progress.current));
     const [start, setStart] = useState(false);
-    const started = useRef(-1);
+    //const started = useRef(-1);
     const index = useRef(-1);
 
 
 
     useEffect(async () => {
-        if(playerTurn && start){
+        //console.log(playerTurn, start);
+        if(playerTurn && start &&
+            isNaN(playerInput)){
             console.log("progressPattern: ", progressPattern);
             for(let i = 0; i < progressPattern.length; i++){
                     let btn = progressPattern[i];
@@ -39,17 +41,19 @@ const App = () => {
                      
             }
 
-            setPlayerTurn(false);
+            //setStart(false);
+
         }
 
-        if(start == false && gameState == false && !playerTurn){
-            if(gameState == false){
-                console.log("cancel execution");
-            }
+        if(start == false && gameState.current == false && !playerTurn){
+            
+            console.log("cancel execution");
+            
 
         }
         
-        if(playerInput != false && playerInput != progressPattern[index.current]){
+        //
+        if(playerInput && playerInput != progressPattern[index.current]){
             console.log('game over');
             window.alert("Game Over - Try Again (Page Reloading)");
             window.location.reload(true)
@@ -68,13 +72,14 @@ const App = () => {
             progress.current = progress.current + 1;
             setProgressPattern([...pattern].slice(0, progress.current));
             index.current = 0;
-            setPlayerTurn(true);
+            setPlayerInput(NaN);
+            setStart(true);
 
         }
 
         
         
-    }, [start, playerTurn, playerInput]);
+    }, [start, playerTurn, playerInput, gameState]);
 
 
     let sleep = (time) => {
@@ -102,14 +107,22 @@ const App = () => {
                 <p>repeat the pattern back to win the game!</p>
                 <button id="gameStateBtn" 
                         onClick={() => { //onstart we set the game conditions
-                            setGameState(!gameState); 
-                            setPlayerInput(false);
-                            start ? setStart(false): setStart(true);
-                            if(index.current == -1){index.current = 0}
+                            if(gameState.current == -1){gameState.current = true}else{gameState.current = !gameState.current}
+                            if(playerTurn == -1){
+                                setPlayerTurn(false);
+                                setPlayerInput(NaN);
+                            }else{
+                                setPlayerTurn(!playerTurn);
+                            }
+                            //setPlayerInput(false);
+                            setStart(!start);
+                            if(playerTurn == -1){setPlayerTurn(true);}
+                            if(index.current == -1){index.current = 0;}
                             if(progress.current == 0){progress.current = 1; setProgressPattern([...pattern].slice(0, progress.current));}
                             
                         }}>
-                        {gameState ? "Stop" : "Start"}
+                            {console.log(gameState, index, progress, playerTurn, start)}
+                        {gameState.current === -1 ? "start" : gameState.current ? "Stop" : 'Start'}
                 </button>
             </div>
             <Game gameState={gameState} sounds={sounds} playSound={playSound} setPlayerInput={setPlayerInput}/>
