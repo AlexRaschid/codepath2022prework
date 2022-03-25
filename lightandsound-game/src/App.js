@@ -16,10 +16,11 @@ const App = () => {
 
     const [playerInput, setPlayerInput] = useState(false); 
     const [playerTurn, setPlayerTurn] = useState(true);//default true bc user needs to click to start
-    const progress = useRef(1);
+    const progress = useRef(0);
     const [progressPattern, setProgressPattern] = useState([...pattern].slice(0, progress.current));
     const [start, setStart] = useState(false);
-    const index = useRef(0);
+    const started = useRef(-1);
+    const index = useRef(-1);
 
 
 
@@ -104,7 +105,8 @@ const App = () => {
                             setGameState(!gameState); 
                             setPlayerInput(false);
                             start ? setStart(false): setStart(true);
-                            //setProgressPattern();
+                            if(index.current == -1){index.current = 0}
+                            if(progress.current == 0){progress.current = 1; setProgressPattern([...pattern].slice(0, progress.current));}
                             
                         }}>
                         {gameState ? "Stop" : "Start"}
