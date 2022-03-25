@@ -21,7 +21,7 @@ const App = () => {
     const [start, setStart] = useState(false);
     //const started = useRef(-1);
     const index = useRef(-1);
-    const disable = useRef(false);
+    const disable = useRef(true);
 
 
 
@@ -118,7 +118,7 @@ const App = () => {
                             //setPlayerInput(false);
                             setStart(!start);
                             console.log("tewst-", !start, !gameState.current);
-                            if(!gameState.current){
+                            if(!gameState.current || gameState.current == -1){
                                 console.log("run code here");
                                 disable.current = !disable.current
                             } else {
