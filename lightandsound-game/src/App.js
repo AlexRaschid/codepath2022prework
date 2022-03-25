@@ -21,6 +21,7 @@ const App = () => {
     const [start, setStart] = useState(false);
     //const started = useRef(-1);
     const index = useRef(-1);
+    const disable = useRef(false);
 
 
 
@@ -116,16 +117,23 @@ const App = () => {
                             }
                             //setPlayerInput(false);
                             setStart(!start);
+                            console.log("tewst-", !start, !gameState.current);
+                            if(!gameState.current){
+                                console.log("run code here");
+                                disable.current = !disable.current
+                            } else {
+                                disable.current = false;
+                            }
                             if(playerTurn == -1){setPlayerTurn(true);}
                             if(index.current == -1){index.current = 0;}
                             if(progress.current == 0){progress.current = 1; setProgressPattern([...pattern].slice(0, progress.current));}
                             
                         }}>
                             {console.log(gameState, index, progress, playerTurn, start)}
-                        {gameState.current === -1 ? "start" : gameState.current ? "Stop" : 'Start'}
+                        {gameState.current === -1 ? "-Start" : gameState.current ? "Stop" : 'Start'}
                 </button>
             </div>
-            <Game gameState={gameState} sounds={sounds} playSound={playSound} setPlayerInput={setPlayerInput}/>
+            <Game gameState={gameState} sounds={sounds} playSound={playSound} setPlayerInput={setPlayerInput} disable={disable} />
         </div>
     );
 }
