@@ -10,7 +10,7 @@ const App = () => {
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart4.mp3?alt=media&token=544dca10-0686-43a4-9c8a-45dee31ab22f")
        ]);
     const gameState = useRef(-1)
-    const [pattern, setPattern] = useState([2, 2, 4]); //[2, 2, 4, 3, 2, 1, 2, 4]
+    const [pattern, setPattern] = useState([2, 2, 4, 3, 2, 1, 2, 4]); //[2, 2, 4, 3, 2, 1, 2, 4]
     //const [progress, setProgress] = useState(1); //increases to eventually match pattern.length == you win
     
 
