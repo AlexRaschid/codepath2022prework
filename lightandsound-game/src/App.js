@@ -107,7 +107,7 @@ const App = () => {
     
 
     return (
-        <div className="container">
+        <div className="container fluid">
             <div className="row text-center">
                 <h1 id="title" >Memorize the Fart</h1>
                 <p id="description">repeat the pattern back to win the game!</p>
