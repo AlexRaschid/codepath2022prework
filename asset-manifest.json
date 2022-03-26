@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/codepath2022prework/static/css/main.66d804cc.css",
-    "main.js": "/codepath2022prework/static/js/main.c654134e.js",
+    "main.js": "/codepath2022prework/static/js/main.9bc3d065.js",
     "index.html": "/codepath2022prework/index.html",
     "main.66d804cc.css.map": "/codepath2022prework/static/css/main.66d804cc.css.map",
-    "main.c654134e.js.map": "/codepath2022prework/static/js/main.c654134e.js.map"
+    "main.9bc3d065.js.map": "/codepath2022prework/static/js/main.9bc3d065.js.map"
   },
   "entrypoints": [
     "static/css/main.66d804cc.css",
-    "static/js/main.c654134e.js"
+    "static/js/main.9bc3d065.js"
   ]
 }
