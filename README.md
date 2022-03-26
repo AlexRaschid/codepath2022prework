@@ -55,7 +55,8 @@ Mobile Responsiveness
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
 
-https://reactjs.org/docs/hooks-intro.html
+https://reactjs.org/docs/hooks-intro.html,
+
 https://getbootstrap.com
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
@@ -64,11 +65,11 @@ A challenge I faced when creating this submission was the decision to use React 
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words)
 
-TODO
+What other technologies would a developer use to make a playable in browser game? Are developers still even making browser games? What would a multiplayer browser game look like in terms of development?
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
 
-[YOUR ANSWER HERE]
+If I had a few more hours to work on this project, I would work on both audio and the stylistic design of the site. The audio as it is right now plays a pre-recorded clip. I would like to add an option of customizing which buttons play which audio, and audio slider, and would make the title/description pop more.
 
 
 
