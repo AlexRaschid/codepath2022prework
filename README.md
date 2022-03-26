@@ -41,11 +41,14 @@ The following **additional** features are implemented:
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
+
+Winning:
 ![win](https://user-images.githubusercontent.com/9421693/160240142-8990d6d3-4c0a-4430-87fa-431d8a1d8163.gif)
 
+Random patterns, losing, pausing, restarting
 ![random patterns plus loseing plus pausing](https://user-images.githubusercontent.com/9421693/160240149-e9584e81-4ce0-41c5-a162-9738e0fd7c57.gif)
 
-
+Mobile Responsiveness
 ![mobile responsive](https://user-images.githubusercontent.com/9421693/160240129-240730bc-ffab-4d26-bb5a-38ef8733ffdd.gif)
 
 
