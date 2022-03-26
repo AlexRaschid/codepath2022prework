@@ -61,6 +61,7 @@ const App = () => {
 
         //
         if(start && playerInput && playerInput != progressPattern[index.current]){
+            setPattern(randomPattern());
             console.log('game over');
             window.alert("Game Over - Try Again (Page Reloading)");
             window.location.reload(true)
