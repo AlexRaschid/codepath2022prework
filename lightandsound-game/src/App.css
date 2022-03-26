@@ -45,6 +45,7 @@
     width:200px;
     height:200px;
     margin:2px;
+    border-width: 10px;
 }
 
 #gameContainer {
