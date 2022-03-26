@@ -35,6 +35,7 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Built using React Hooks
+- [x] Bootstrap / Mobile Responsiveness
 
 ## Video Walkthrough (GIF)
 
@@ -48,6 +49,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
 
 https://reactjs.org/docs/hooks-intro.html
+https://getbootstrap.com
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 
