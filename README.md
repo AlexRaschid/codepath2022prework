@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] Build using React Hooks
+- [x] Built using React Hooks
 
 ## Video Walkthrough (GIF)
 
@@ -46,7 +46,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[https://reactjs.org/docs/hooks-intro.html]
+https://reactjs.org/docs/hooks-intro.html
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 [YOUR ANSWER HERE]
