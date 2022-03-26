@@ -42,11 +42,19 @@
 .gameButton {
     padding: 100px;
     border-radius: 10px;
-    width: 100%
-}
-
-.buttonCol {
     width:200px;
     height:200px;
     margin:2px;
+}
+
+#gameContainer {
+    padding-top: 1em;
+}
+
+body{
+    background-color: #966919;
+}
+
+#title, #description{
+    color: white
 }

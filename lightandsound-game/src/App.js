@@ -107,10 +107,10 @@ const App = () => {
     
 
     return (
-        <div>
-            <div>
-                <h1>Light and Fart Memory game</h1>
-                <p>repeat the pattern back to win the game!</p>
+        <div className="container">
+            <div className="row text-center">
+                <h1 id="title" >Memorize the Fart</h1>
+                <p id="description">repeat the pattern back to win the game!</p>
                 <button id="gameStateBtn" 
                         onClick={() => { //onstart we set the game conditions
                             if(gameState.current == -1){gameState.current = true}else{gameState.current = !gameState.current}
