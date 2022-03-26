@@ -4,8 +4,6 @@ const Game = (props) => {
     
     let sounds = props.sounds;
     
-    
-    console.log("are buttons disabled?", props.disable);
 
     return (
             <div id="gameContainer">

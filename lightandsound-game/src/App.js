@@ -36,7 +36,6 @@ const App = () => {
         
         if(playerTurn && start &&
             isNaN(playerInput)){
-            console.log("progressPattern: ", progressPattern);
             for(let i = 0; i < progressPattern.length; i++){
                     let btn = progressPattern[i];
 
