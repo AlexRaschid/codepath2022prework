@@ -35,7 +35,8 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [x] Built using React Hooks
-- [x] Bootstrap / Mobile Responsiveness
+- [x] Bootstrap
+- [x] Mobile Responsive
 
 ## Video Walkthrough (GIF)
 
