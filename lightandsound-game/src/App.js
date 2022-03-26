@@ -13,36 +13,32 @@ const App = () => {
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart3.mp3?alt=media&token=67cb6320-3a90-4c84-850b-da92af235ef6"),
         new Audio("https://firebasestorage.googleapis.com/v0/b/codepath2022prework.appspot.com/o/audio%2Ffart4.mp3?alt=media&token=544dca10-0686-43a4-9c8a-45dee31ab22f")
        ]);
-    const gameState = useRef(-1)
     const [pattern, setPattern] = useState(randomPattern()); //[2, 2, 4, 3, 2, 1, 2, 4]
-    //const [progress, setProgress] = useState(1); //increases to eventually match pattern.length == you win
     
-
-    const [playerInput, setPlayerInput] = useState(false); 
-    const [playerTurn, setPlayerTurn] = useState(-1);//default true bc user needs to click to start
+    
+    const gameState = useRef(-1)
     const progress = useRef(0);
-    const [progressPattern, setProgressPattern] = useState([...pattern].slice(0, progress.current));
-    const [start, setStart] = useState(false);
-    //const started = useRef(-1);
     const index = useRef(-1);
     const disable = useRef(false);
+    const [progressPattern, setProgressPattern] = useState([...pattern].slice(0, progress.current));
+    const [start, setStart] = useState(false);
+    const [playerInput, setPlayerInput] = useState(false); 
+    const [playerTurn, setPlayerTurn] = useState(-1);
 
 
 
     useEffect(async () => {
+
         if(progress.current > pattern.length){
-            console.log('you win');
             window.alert("Winner - play again? (Page Reloading)");
             window.location.reload(true)
         }
-        //console.log(playerTurn, start);
+        
         if(playerTurn && start &&
             isNaN(playerInput)){
             console.log("progressPattern: ", progressPattern);
             for(let i = 0; i < progressPattern.length; i++){
                     let btn = progressPattern[i];
-                    
-                    
 
                     await sleep(800);
                     playSound(btn -1 );
@@ -53,48 +49,36 @@ const App = () => {
                      
             }
 
-            //setStart(false);
 
         }
 
         
-
-        //
         if(start && playerInput && playerInput != progressPattern[index.current]){
             setPattern(randomPattern());
-            console.log('game over');
             window.alert("Game Over - Try Again (Page Reloading)");
             window.location.reload(true)
         }
 
         if(playerInput == progressPattern[index.current]){
             index.current = index.current + 1;
-            console.log(index);
             setPlayerInput(false);
         }
 
         if(index.current == progressPattern.length){
-            console.log("pattern matched");
             progress.current = progress.current + 1;
             setProgressPattern([...pattern].slice(0, progress.current));
             index.current = 0;
             setPlayerInput(NaN);
             setStart(true);
-
         }
 
-        
-        
     }, [start, playerTurn, playerInput, gameState]);
-
 
     let sleep = (time) => {
         return new Promise(resolve => setTimeout(resolve,time));
     }
 
-
     let playSound = (id) => {
-        // minus one since the array indexing
         sounds[id].play();
     };    
 
@@ -106,7 +90,6 @@ const App = () => {
         document.getElementById(id).classList.remove("lit")
     }
     
-
     return (
         <div className="container fluid">
             <div className="row text-center">
@@ -121,9 +104,7 @@ const App = () => {
                             }else{
                                 setPlayerTurn(!playerTurn);
                             }
-                            //setPlayerInput(false);
                             setStart(!start);
-                            console.log("tewst-", !start, !gameState.current);
                             if(!gameState.current || gameState.current == -1){
                                 console.log("run code here");
                                 disable.current = !disable.current
@@ -135,7 +116,6 @@ const App = () => {
                             if(progress.current == 0){progress.current = 1; setProgressPattern([...pattern].slice(0, progress.current));}
                             
                         }}>
-                            {console.log(gameState, index, progress, playerTurn, start)}
                         {gameState.current === -1 ? "Start" : gameState.current ? "Stop" : 'Start'}
                 </button>
             </div>
