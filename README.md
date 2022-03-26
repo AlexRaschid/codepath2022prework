@@ -22,32 +22,42 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [x] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
 * [x] Buttons use a pitch (frequency) other than the ones in the tutorial
 * [ ] More than 4 functional game buttons
 * [ ] Playback speeds up on each turn
 * [x] Computer picks a different pattern each time the game is played
 * [ ] Player only loses after 3 mistakes (instead of on the first mistake)
 * [ ] Game button appearance change goes beyond color (e.g. add an image)
-* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
+* [x] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
 * [ ] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
 - [x] Built using React Hooks
+- [x] Bootstrap
+- [x] Mobile Responsive
 
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
+
+Winning:
+![win](https://user-images.githubusercontent.com/9421693/160240142-8990d6d3-4c0a-4430-87fa-431d8a1d8163.gif)
+
+Random patterns, losing, pausing, restarting
+![random patterns plus loseing plus pausing](https://user-images.githubusercontent.com/9421693/160240149-e9584e81-4ce0-41c5-a162-9738e0fd7c57.gif)
+
+Mobile Responsiveness
+![mobile responsive](https://user-images.githubusercontent.com/9421693/160240129-240730bc-ffab-4d26-bb5a-38ef8733ffdd.gif)
+
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
 
-https://reactjs.org/docs/hooks-intro.html
+https://reactjs.org/docs/hooks-intro.html,
+
+https://getbootstrap.com
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 
@@ -55,11 +65,11 @@ A challenge I faced when creating this submission was the decision to use React 
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words)
 
-TODO
+What other technologies would a developer use to make a playable in browser game? Are developers still even making browser games? What would a multiplayer browser game look like in terms of development?
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
 
-[YOUR ANSWER HERE]
+If I had a few more hours to work on this project, I would work on both audio and the stylistic design of the site. The audio as it is right now plays a pre-recorded clip. I would like to add an option of customizing which buttons play which audio, and audio slider, and would make the title/description pop more.
 
 
 
