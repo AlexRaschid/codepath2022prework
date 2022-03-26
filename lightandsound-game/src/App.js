@@ -106,7 +106,6 @@ const App = () => {
                             }
                             setStart(!start);
                             if(!gameState.current || gameState.current == -1){
-                                console.log("run code here");
                                 disable.current = !disable.current
                             } else {
                                 disable.current = false;
