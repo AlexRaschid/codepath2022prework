@@ -93,7 +93,10 @@ const App = () => {
         <div className="container fluid">
             <div className="row text-center">
                 <h1 id="title" >Memorize the Fart</h1>
-                <p id="description">repeat the pattern back to win the game!</p>
+                <h5 id="description">repeat the pattern back to win the game!</h5>
+                <h4 id="level">
+                    {progress.current === 0 ? "Press 'Start' to begin!" : progress.current > pattern.length ? "Winner!" : 'Level: ' + progress.current}
+                </h4>
                 <button id="gameStateBtn" 
                         onClick={() => { //onstart we set the game conditions
                             if(gameState.current == -1){gameState.current = true}else{gameState.current = !gameState.current}
