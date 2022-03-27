@@ -45,6 +45,9 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 Winning:
 ![win](https://user-images.githubusercontent.com/9421693/160240142-8990d6d3-4c0a-4430-87fa-431d8a1d8163.gif)
 
+*update* Level Counter:
+![Level counter](https://user-images.githubusercontent.com/9421693/160264021-7ff4a1b6-26d4-4ae1-8b56-d4064d9c1d8b.gif)
+
 Random patterns, losing, pausing, restarting
 ![random patterns plus loseing plus pausing](https://user-images.githubusercontent.com/9421693/160240149-e9584e81-4ce0-41c5-a162-9738e0fd7c57.gif)
 
