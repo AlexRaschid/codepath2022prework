@@ -59,7 +59,7 @@ Mobile Responsiveness
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
 
-https://reactjs.org/docs/hooks-intro.html,
+https://reactjs.org/docs/hooks-intro.html
 
 https://getbootstrap.com
 
