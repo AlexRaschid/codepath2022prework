@@ -38,6 +38,7 @@ The following **additional** features are implemented:
 - [x] Bootstrap
 - [x] Mobile Responsive
 - [x] Level Counter
+- [x] Farts
 
 ## Video Walkthrough (GIF)
 
